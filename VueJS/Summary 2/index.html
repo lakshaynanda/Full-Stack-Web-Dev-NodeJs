@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VueJs</title>
+    <link rel="stylesheet" href="styles.css"/>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+    <div id="vue-app">
+        <p>Example 1</p>
+        <div v-on:click="available=!available" v-bind:class="{available:available}">
+            <span class="one">Lakshay</span>
+        </div>
+        <p>Example 2</p>
+        <button v-on:click="available=!available">Toggle available</button>
+        <button v-on:click="nearby=!nearby">Toggle nearby</button>
+        <div v-bind:class="compClass">
+            <span>Lakshay</span>
+        </div>
+        
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

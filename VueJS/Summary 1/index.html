@@ -35,9 +35,9 @@
         <p>A-{{a}}</p>
         <p>B-{{b}}</p>
         <p>Age + A ={{addToA}}</p>
-        <p>Age + B ={{addToB}}</p>
+        <p>Age + B ={{addToB()}}</p>
         <input @keyup.alt.enter="logAge" type="text" placeholder="Age">
-
+        
         <div id="canvas" @mousemove="updateXY">{{x}}, {{y}}</div>
         
     </div>
