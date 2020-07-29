@@ -28,7 +28,15 @@
         <label for="name">Name</label>
         <input @keyup.enter="logName" type="text" placeholder="Name">
         <label for="age">Age</label>
-        <input @keyup.enter="logAge" type="text" placeholder="Age">
+        <br>
+        <br>
+        <button @click="a++">Add to A</button>
+        <button @click="b++">Add to B</button>
+        <p>A-{{a}}</p>
+        <p>B-{{b}}</p>
+        <p>Age + A ={{addToA}}</p>
+        <p>Age + B ={{addToB}}</p>
+        <input @keyup.alt.enter="logAge" type="text" placeholder="Age">
 
         <div id="canvas" @mousemove="updateXY">{{x}}, {{y}}</div>
         
