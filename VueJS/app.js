@@ -2,6 +2,7 @@ new Vue({
     el:'#vue-app',
     data:{
         name: '',
+        username:'',
         title: 'Software Engineer',
         age:'10',
         job: 'Web Development',
@@ -9,6 +10,11 @@ new Vue({
         isEven: true,
         x:0,
         y:0,
+        tasks:[
+            {name:'first task', priority:0},
+            {name:'second task', priority:1},
+            {name:'third task', priority:2}
+        ]
     },
     methods:{
         add:function(inc){
@@ -22,6 +28,20 @@ new Vue({
         updateXY:function(event){
             this.x=event.offsetX;
             this.y=event.offsetY;
+        },
+        addtask:function(){
+            this.tasks.push(
+                {
+                name: this.newtasks,
+                priority:parseInt(this.priority)
+            }
+            );
+        },
+        logName:function(){
+            console.log('Name was entered');
+        },
+        logAge:function(){
+            console.log('Age was entered');
         }
     }
 });
