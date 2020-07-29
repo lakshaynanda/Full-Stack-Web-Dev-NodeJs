@@ -7,3 +7,10 @@ p{
 div{
     color: white;
 }
+#canvas{
+    height: 400px;
+    width: 800px;
+    background-color: grey;
+    padding: 400px 20px;
+    text-align: center;
+}
