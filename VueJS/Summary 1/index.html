@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VueJs</title>
+    <link rel="stylesheet" href="styles.css"/>
+    <script src="https://unpkg.com/vue"></script>
+
+</head>
+<body>
+    <div id="vue-app">
+        <button @click="add(1)">Click to Add 1</button>
+        <button @click="sub(1)">Click to Sub 1</button>
+        <button @dblclick="add(10)">Click to Add 10</button>
+        <button @dblclick="sub(10)">Click to Sub 10</button>
+        <p>My age is {{ age }}</p>
+        <div v-if="isEven">EVEN</div>
+        <div v-else>ODD</div>
+        <input type="text" placeholder="username" v-model="username">
+        <p>Hello {{ username }}</p>
+        <input v-model="newtasks" type="text">
+        <input v-model="priority" type="text">
+        <button @click="addtask">ADD</button>
+        <ul>
+            <li v-for="task in tasks">{{task.name}}</li>
+        </ul>
+        <label for="name">Name</label>
+        <input @keyup.enter="logName" type="text" placeholder="Name">
+        <label for="age">Age</label>
+        <br>
+        <br>
+        <button @click="a++">Add to A</button>
+        <button @click="b++">Add to B</button>
+        <p>A-{{a}}</p>
+        <p>B-{{b}}</p>
+        <p>Age + A ={{addToA}}</p>
+        <p>Age + B ={{addToB()}}</p>
+        <input @keyup.alt.enter="logAge" type="text" placeholder="Age">
+        
+        <div id="canvas" @mousemove="updateXY">{{x}}, {{y}}</div>
+        
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
