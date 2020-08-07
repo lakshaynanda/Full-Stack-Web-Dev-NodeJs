@@ -6,7 +6,7 @@ window.onload=function(){
     addtask.onclick=function(){   
         let li=document.createElement('li')
 
-        ///Add the Delete Button
+        //Add the Delete Button
         let xBtn= document.createElement('button')
         xBtn.innerText='ⓧ'
         xBtn.onclick=function(){
