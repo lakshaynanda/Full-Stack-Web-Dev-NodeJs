@@ -16,6 +16,15 @@
         <a v-bind:href="website">Lakshay Resume</a>
         <input type="text" v-bind:value="Job">
         <p v-html="websiteTag"></p>
+        <button v-on:click="add(1)">Add a year</button>
+        <button v-on:click="sub(1)">Sub a year</button>
+        <button v-on:dblclick="add(10)">Add 10 year</button>
+        <button v-on:dblclick="sub(10)">Sub 10 year</button>
+        <p>My age is : {{ Age }}</p>
+
+        <div id="canvas" v-on:mousemove="updateXY">
+            {{x}}, {{y}}
+        </div>
     </div>
     <script src="app.js"></script>
 </body>
