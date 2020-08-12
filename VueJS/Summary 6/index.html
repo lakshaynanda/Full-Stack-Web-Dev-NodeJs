@@ -25,6 +25,17 @@
         <div id="canvas" v-on:mousemove="updateXY">
             {{x}}, {{y}}
         </div>
+        <input type="text" placeholder="Name" v-model="Name">
+        <span>{{ Name }}</span>
+        <input type="text" placeholder="Age" v-model="Age">
+        <span>{{ Age }}</span> <br><br><br>
+        <button v-on:click="a++">Add to A</button>
+        <button v-on:click="b++">Add to B</button>
+        <p>A-{{a}}</p>
+        <p>B-{{b}}</p>
+        <p>Age + A = {{ addToA }}</p>
+        <p>Age + B = {{ addToB }}</p>
+
     </div>
     <script src="app.js"></script>
 </body>
