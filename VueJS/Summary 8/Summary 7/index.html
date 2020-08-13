@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Components in VueJs</title>
+    <script src="https://unpkg.com/vue"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="vue-app">
+        <button v-on:click="error=!error">Toggle Error</button>
+        <button v-on:click="success=!success">Toggle Success</button>
+        <p v-if="error">This is Lakshay's error</p>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
