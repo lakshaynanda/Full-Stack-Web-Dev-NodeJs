@@ -11,7 +11,10 @@
     <div id="vue-app">
         <button v-on:click="error=!error">Toggle Error</button>
         <button v-on:click="success=!success">Toggle Success</button>
-        <p v-if="error">This is Lakshay's error</p>
+        <!-- <p v-if="error">This is Lakshay's error</p>
+        <p v-else-if="success">We are in! Whooooo</p> -->
+        <p v-show="error">This is Lakshay's error</p>
+        <p v-show="success">We are in! Whooooo</p>
     </div>
     <script src="app.js"></script>
 </body>
