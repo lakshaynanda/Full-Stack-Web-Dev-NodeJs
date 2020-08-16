@@ -1,3 +1,22 @@
+// var data={
+//     name:'Vinayak'
+// }
+
+Vue.component('greeting',{
+    template:"<p>I am {{ name }}. <button v-on:click='changeName'>Change Name</button></p>",
+    data:function(){
+        return {
+            name: 'Lakshay Nanda'
+        }
+        // return data; // for changing from global data in all the apps that have used the template
+    },
+    methods:{
+        changeName:function(){
+            this.name = 'Bhoomika Nanda'
+        }
+    }
+})
+
 var one = new Vue({
     el:'#vue-app-one',
     data:{
