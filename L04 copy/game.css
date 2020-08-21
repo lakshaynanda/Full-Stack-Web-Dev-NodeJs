@@ -1,0 +1,52 @@
+.container{
+    background-color:lightpink ;
+    height: 925px;
+    width: 1350px; 
+}
+.item{
+    background-color: cadetblue;
+    height: 120px;
+    width: 150px;
+    margin: 55px;
+    display: inline-block;
+    border: solid black 3px;
+    animation: bounce 2s;
+    animation-iteration-count: infinite;
+    animation: linear;
+    transition: 1s;
+    border-radius: 20px;
+}
+.player{
+    transform: translateY(270px);
+    background-color: brown;
+    animation: move 4s infinite;
+    animation-play-state: paused;
+}
+.container:active .player{
+    animation-play-state: running;
+}
+.enemy{
+    margin: 100px;
+    animation-name: bounce;
+    animation-iteration-count: infinite;
+}
+.enemy.one{
+    animation-duration: 4s;
+}
+.enemy.two{
+    animation-duration: 3.5s;
+}
+.enemy.three{
+    animation-duration: 2.5s;
+}
+@keyframes bounce{
+    50%{
+        transform: translateY(680px);
+    }
+}
+@keyframes move{
+    50%{
+        transform: translateY(270px) translateX(1100px);
+    }
+}
+
