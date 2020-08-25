@@ -34,7 +34,7 @@ export default {
       this.title=updatedTitle;
     }
   }
-}
+} 
 </script>
 
 <style>
