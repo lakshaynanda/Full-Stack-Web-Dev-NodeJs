@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" >
+  <head>
+    <title>node-sql-parser</title>
+    <meta charset="utf-8" />
+    <script src="sql-where-parser/sql-where-parser.min.js"></script>
+  </head>
+  <body>
+    <p><em>Check console to see the output</em></p>
+    <script src="https://unpkg.com/node-sql-parser/umd/mysql.umd.js"></script> 
+    <script>
+  
+
+  query = "select activity from plat where category= 'Phishing' and (verdict = 'Malicious' or malscore > 80)";
+    
+    function tokenizeQuery1(){
+        const parser = new NodeSQLParser.Parser()
+        ast = parser.astify(query)
+    
+        return ast
+    }
+    
+    tokens=tokenizeQuery1();
+    
+    function tokensToQuery1(){
+        const parser = new NodeSQLParser.Parser()
+        sql = parser.sqlify(tokens)
+    
+        return sql
+    }
+    </script> 
+  </body>
+</html>
+
+

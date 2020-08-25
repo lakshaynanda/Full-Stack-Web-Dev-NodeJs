@@ -3,95 +3,23 @@
   <head>
     <title>node-sql-parser</title>
     <meta charset="utf-8" />
+    <script src="sql-where-parser/sql-where-parser.min.js"></script>
   </head>
   <body>
     <p><em>Check console to see the output</em></p>
     <script src="https://unpkg.com/node-sql-parser/umd/mysql.umd.js"></script> 
     <script>
-    //   window.onload = function () {
-        
-    //     const parser = new NodeSQLParser.Parser()
-    //     const ast = parser.astify("select activity from plat where category= 'Phishing' and (verdict = 'Malicious' or malscore > 80)")
-    //     console.log(ast)
-    //     const sql = parser.sqlify(ast)
-    //     console.log(sql)
-    //   }
+  
 
-    query = "select activity from plat where category= 'Phishing' and (verdict = 'Malicious' or malscore > 80)";
+    query = "category= 'Phishing' and (verdict = 'Malicious' or malscore > 80)";
     
-    function tokenizeQuery1(){
-        const parser = new NodeSQLParser.Parser()
-        ast = parser.astify(query)
-
-        return ast
-    }
-    tokens=tokenizeQuery1();
-    function tokensToQuery1(){
-        const parser = new NodeSQLParser.Parser()
-        sql = parser.sqlify(tokens)
-        return sql
-    }
     
-
-
-
-
-    // function tokenizeQuery(query){
-    //     query = "category = 'Phishing' and (verdict = 'Malicious' or malscore>80)";
-
-    //     arraySplit = query.split(" ")
-
-    //     res = [
-    //     {
-    //         type: "group",
-    //         children: [
-    //         { type: "condition", field: "category", operator: "=", value: "Holding" } // category = 'Phishing'
-    //         ]
-    //     },
-    //     {
-    //         type: "logical_operator",
-    //         value: "REM"
-    //     }, // and
-    //     {
-    //         type: "group",
-    //         children: [
-    //         {
-    //             type: "condition",
-    //             field: "verdict",
-    //             operator: "=",
-    //             value: "Dam"
-    //         }, // verdict = 'Malicious'
-    //         { type: "logical_operator", value: "AND" }, // ... or ...
-    //         {
-    //             type: "condition",
-    //             field: "malscore",
-    //             operator: "=",
-    //             value: 99
-    //         } // malscore > 80
-    //         ]
-    //     }
-    //     ]
-    //     res[0].children[0].value = arraySplit[2].substring(1,arraySplit[2].length-1)
-    //     res[1].value = arraySplit[3].toUpperCase()
-    //     res[2].children[0].value = arraySplit[6].substring(1,arraySplit[6].length-1)
-    //     res[2].children[1].value = arraySplit[7].toUpperCase() 
-    //     start = 0;
-    //     for(i=0;i<arraySplit[8].length;i++){
-    //         if(arraySplit[8][i] == "<"|| arraySplit[8][i] == ">" || arraySplit[8][i] == "="){
-    //             start = i;
-    //             res[2].children[2].operator = arraySplit[8][i];
-    //             break;
-    //         }
-    //     }
-    //     res[2].children[2].value = parseInt(arraySplit[8].substring(start+1,arraySplit[8].length-1))
-
-    //     return res;
-    // }
-    //   function tokensToQuery(res){
-    //     out = "category = '"+res[0].children[0].value+"' "+res[1].value.toLowerCase()+ " (verdict = 'Malicious' "+res[2].children[1].value.toLowerCase()+" malscore"+res[2].children[2].operator+res[2].children[2].value+")"
-
-    //     return out
-    // }
+      function help(){
+        const SqlWhereParser = require('sql-where-parser')
+        const sql = 'name = "Shaun Persad" AND job = developer AND (gender = male OR type = person AND location IN (NY, America) AND hobby = coding)';
+        const parser = new SqlWhereParser();
+        const parsed = parser.parse(sql);
+      }
     </script> 
   </body>
 </html>
