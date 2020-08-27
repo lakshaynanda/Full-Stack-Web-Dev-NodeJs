@@ -14,7 +14,7 @@ export default {
   },
   data () {
     return {
-      title:'Vue Ninja'
+      title:'Vue Ninja' 
     }
   },
   methods:{
