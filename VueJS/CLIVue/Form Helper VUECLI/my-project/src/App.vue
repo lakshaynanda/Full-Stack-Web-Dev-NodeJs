@@ -1,23 +1,25 @@
 <template>
   <div>
-    <form-helper>
-      <h2 slot="title">This is a slot</h2>
-      <p slot="text">This is the text inside the slot tag</p>
-
-    </form-helper>
-
+    <keep-alive>
+      <component v-bind:is="component"></component>
+    </keep-alive>
+    <button v-on:click="component='form-one'">Show form one</button>
+    <button v-on:click="component='form-two'">Show form two</button>
+    
   </div>
 </template>
 
 <script>
-import formHelper from './components/formHelper.vue'
+import formOne from './components/formOne.vue'
+import formTwo from './components/formTwo.vue'
 export default {
   components:{
-    'form-helper':formHelper
+    'form-one':formOne,
+    'form-two':formTwo
   },
   data () {
     return {
-      
+       component:'form-one'
     }
   },
   methods:{
@@ -27,30 +29,8 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-
-h1, h2 {
-  font-weight: normal;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-a {
-  color: #42b983;
+body{
+    margin: 0;
+    font-family: 'Nunito SemiBold';
 }
 </style>
