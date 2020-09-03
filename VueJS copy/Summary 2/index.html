@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VueJs</title>
+    <link rel="stylesheet" href="styles.css"/>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+    <div id="vue-app">
+        <p>Example 1</p>
+        <div v-on:click="available=!available" v-bind:class="{available:available}">
+            <span class="one">Lakshay</span>
+        </div>
+        <p>Example 2</p>
+        <button v-on:click="available=!available">Toggle available</button>
+        <button v-on:click="nearby=!nearby">Toggle nearby</button>
+        <div v-bind:class="compClass">
+            <span>Lakshay</span>
+        </div>
+        <h1>Conditionals</h1>
+        <button v-on:click="error=!error">Error Toggle</button>
+        <button v-on:click="success=!success">Success Toggle</button>
+        <p v-if="error">There has been an error</p>
+        <p v-else-if="success">We were successful</p>
+        <h1>V-SHOW</h1>
+        <button v-on:click="error=!error">Error Toggle</button>
+        <button v-on:click="success=!success">Success Toggle</button>
+        <p v-show="error">There has been an error</p>
+        <p v-show="success">We were successful</p>
+        <h1>V-FOR</h1>
+        <ul>
+            <li v-for="val in characters">{{ val }}</li>
+        </ul>
+        <ul>
+            <li v-for="(val,index) in ninjas">{{index}} . {{ val.name }}, {{ val.age }}</li>
+        </ul>
+        <template v-for="(ninja,index) in ninjas">
+            <h3>{{ index }} . {{ ninja.name }}</h3>
+            <p>{{ ninja.age }}</p>
+        </template>
+
+        <template v-for="ninja in ninjas">
+            <div v-for="(val,key) in ninja">
+                <p>{{ key }}-{{ val }}</p>
+            </div>
+
+        </template>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

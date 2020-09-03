@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Components in VueJs</title>
+    <script src="https://unpkg.com/vue"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="vue-app-one">
+        <h2>Refs</h2>
+        <input type="text" ref="input"/>
+        <button v-on:click="">Get Ref</button>
+        <p>Your fav food is {{ output }}</p>
+
+        <h2>Refs</h2>
+        <input type="text" ref="input">
+        <button v-on:click="readRefs">Submit</button>
+        <p>My favourate food is : {{ output }}</p>
+        <div ref="test">Hello</div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

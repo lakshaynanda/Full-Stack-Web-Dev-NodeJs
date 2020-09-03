@@ -1,0 +1,32 @@
+body{
+    background-color: #333;
+}
+p{
+    color: white;
+}
+div{
+    color: white;
+}
+#canvas{
+    height: 400px;
+    width: 800px;
+    background-color: grey;
+    padding: 400px 20px;
+    text-align: center;
+}
+span{
+    background: red;
+    display: inline-block;
+    padding: 10px;
+    color:black;
+    margin: 10px 0px;
+}
+
+
+.available span{
+    background: green;
+}
+.nearby span:after{
+    content: "nearby";
+    margin-left: 10px;
+}
