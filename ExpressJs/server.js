@@ -1,4 +1,5 @@
 const express = require('express')
+const { json } = require('express')
 
 const app = express()
 
@@ -28,11 +29,13 @@ app.get('/form',(req,res)=>{
 })
 
 app.get('/:city/welcome',(req,res) => {
-    res.send('Welcome to this city')
+    res.send('Welcome to '+ req.params.city + "!")
 })
 
+app.get('/:person/:action',(req,res) => {
+    res.send('Thank you '+ req.params.person+ ' for '+ req.params.action )
+})
 
 app.listen(4444,() => {
     console.log('server started on http://localhost:4444')
 })
-
