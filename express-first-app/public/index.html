@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="js/script.js"></script>
 </head>
+
 <body>
     <form action="/hello" method="GET">
         <input name="user" type="text">
@@ -14,6 +17,8 @@
         <input name="q" type="text" placeholder="search query">
         <button formaction="https://google.com/search" type="submit">Search Google</button>
         <button formaction="https://bing.com/search" type="submit">Search Bing</button>
+        <!-- !g !b in front ofsearch parameter redirects toother search engine -->
     </form>
 </body>
+
 </html>

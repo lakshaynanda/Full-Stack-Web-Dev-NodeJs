@@ -1,0 +1,24 @@
+div{
+    height: 100px;
+    width: 100px;
+    color:white;
+    background-color: indigo;
+    padding: 20px;
+    margin: 30px;
+}
+
+.two{
+    transform: scaleX(1.5);
+}
+
+.four{
+    transform: rotateZ(45deg);
+}
+
+.six{
+    transform: translateX(150px) translateY(40px) rotateZ(45deg)
+}
+
+.twelve{
+    transform: skewX(-40deg) skewY(40deg);
+}
